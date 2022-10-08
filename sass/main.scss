@@ -1,0 +1,23 @@
+
+// custom variables
+$secondary:#5d2822;
+$light: #f4f1e9;
+$warning: #ffffff;
+$info: #ffffff00;
+$dark: #000000;
+$primary: #ff2920;
+
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+
+$custom-theme-colors:(
+"newcol1":#9ccfb1,
+"newcol2": #f4f1e0 ,
+"newcol3": #134778,
+"newcol4": #54a491,
+"newcol5": #fef4dc ,
+);
+
+$theme-colors: map-merge($custom-theme-colors, $theme_colors);
+// import bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap.scss';

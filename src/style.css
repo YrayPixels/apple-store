@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&family=Alegreya+Sans&family=Merriweather&family=Merriweather+Sans&family=Nunito&family=Nunito+Sans&family=Quattrocento&family=Quattrocento+Sans&family=Roboto&family=Roboto+Mono&family=Roboto+Slab&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.logo img {
+    height: 65px;
+}
+
+nav li {
+    text-transform: uppercase;
+}
+
+nav li:hover {
+    background-color: #9ccfb191;
+    padding: 10px;
+}
+
+.shoe {
+    position: relative;
+    z-index: 1;
+    height: 500px;
+    top: -100px;
+}
+
+.shoe img {
+    height: 500px;
+}
+
+.shoe img:hover {
+    /* box-shadow:0px 0px 10px 1px; */
+    transition: transform 2.0s;
+    transform: rotateY(360deg);
+    /* background-image: url(../images/imgs.png); */
+}
+
+.landing p {
+    font-size: 24px;
+}
+
+.categories {
+    height: 300px;
+    /* border: 1px solid blue; */
+}
+
+.categories h3:hover {
+    color: #ff2720a2;
+}
+
+.categories div {
+    position: relative;
+    top: 45%;
+}
+
+.men {
+    background-image: url('../public/images/male.jpg');
+    background-size: cover;
+}
+
+.women {
+    background-image: url('../public/images/female.jpg');
+    background-size: cover;
+}
+
+.accessories {
+    background-image: url('../public/images/access.jpg');
+    background-size: cover;
+}
+
+.newArrivals:hover {
+    background-color: #ff2720;
+    color: rgb(255, 255, 255);
+}
+
+.imgdiv {
+    height: 325px;
+    align-items: center;
+    padding: 15px;
+}
+
+.imgdiv img:hover {
+    transition: transform 3.0s;
+    transform: rotateY(360deg);
+}
+
+.items a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+.items p {
+    text-decoration: none;
+    color: #ff2720;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.itemcard:hover {
+    box-shadow: 0px 0px 25px -10px;
+}
+
+.itemcard {
+    position: relative;
+}
+
+.fav {
+
+    position: relative;
+    top: 2%;
+    left: 40%;
+}
+
+.addtocart {
+    position: relative;
+    /* bottom: 0%; */
+}
+
+.dealImgF {
+    position: relative;
+}
+
+.dealImg img {
+    /* background-image: url('/images/male.jpg'); */
+    height: 500px;
+    position: relative;
+    background-size: cover;
+}
+
+.footer li {
+    list-style: none;
+}
+
+
+
+
+/* rating */
+
+
+
+
+
+
+
+input {
+    display: none;
+}
+
+label {
+    width: 5vmin;
+    height: 5vmin;
+    background: rgba(0, 0, 0, 0.733);
+    display: inline-flex;
+    cursor: pointer;
+    margin: 0.5vmin 0.65vmin;
+    transition: all 1s ease 0s;
+    clip-path: polygon(50% 0%, 66% 32%, 100% 38%, 78% 64%, 83% 100%, 50% 83%, 17% 100%, 22% 64%, 0 38%, 34% 32%);
+}
+
+label[for=rs0] {
+    display: none;
+}
+
+label:before {
+    width: 90%;
+    height: 90%;
+    content: "";
+    background: orange;
+    z-index: -1;
+    display: block;
+    margin-left: 5%;
+    margin-top: 5%;
+    clip-path: polygon(50% 0%, 66% 32%, 100% 38%, 78% 64%, 83% 100%, 50% 83%, 17% 100%, 22% 64%, 0 38%, 34% 32%);
+    background: linear-gradient(90deg, yellow, yellow 30% 50%, #000000 50%, 70%, #000000 100%);
+    background-size: 205% 100%;
+    background-position: 0 0;
+}
+
+label:hover:before {
+    transition: all 0.25s ease 0s;
+}
+
+input:checked+label~label:before {
+    background-position: 100% 0;
+    transition: all 0.25s ease 0s;
+}
+
+input:checked+label~label:hover:before {
+    background-position: 0% 0
+}
+
+
+label+input:checked~.rating-counter:before {
+    color: #ffab00 !important;
+    transition: all 0.25s ease 0s;
+}
+
+label:hover~.rating-counter:before {
+    color: #9aacc6 !important;
+    transition: all 0.5s ease 0s;
+    animation: pulse 1s ease 0s infinite;
+}
+
+@keyframes pulse {
+    50% {
+        font-size: 6.25vmin;
+    }
+}
+
+label[for=rs1]:hover~.rating-counter:before {
+    content: "1" !important;
+}
+
+label[for=rs2]:hover~.rating-counter:before {
+    content: "2" !important;
+}
+
+label[for=rs3]:hover~.rating-counter:before {
+    content: "3" !important;
+}
+
+label[for=rs4]:hover~.rating-counter:before {
+    content: "4" !important;
+}
+
+label[for=rs5]:hover~.rating-counter:before {
+    content: "5" !important;
+}
+
+
+input:checked:hover~.rating-counter:before {
+    animation: none !important;
+    color: #ffab00 !important;
+}
