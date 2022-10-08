@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import Additionalinfo from './Additionalinfo'
 import Description from './Description'
+import Review from './Review'
 
 export default class ItemDescription extends Component {
     constructor(props) {
@@ -15,46 +17,86 @@ export default class ItemDescription extends Component {
         })
     }
     additionalInfo() {
-
+        this.setState({
+            selectDiv: 'additionalInfo'
+        })
     }
     reviews() {
+        this.setState({
+            selectDiv: 'Review'
 
+        })
     }
     render() {
 
-        if (this.state.selectDiv == 0) {
+
+        if (this.state.selectDiv == 'additionalInfo') {
             return (
                 <>
-                </>
-            )
-        } else if (this.state.selectDiv == 'Description') {
-            return (
-                <>
-                    <div className="container-fluid">
+                    <div className="container-fluid description">
                         <div className='d-flex justify-content-around'>
                             <div>
                                 <button onClick={() => this.description()}>Description</button>
                             </div>
                             <div>
-                                <button>Additonal Information</button>
+                                <button className='border border-primary' onClick={() => this.additionalInfo()}>Additonal Information</button>
                             </div>
-                            <div><button>
+                            <div><button onClick={() => this.reviews()}>
                                 Reviews
                             </button>
                             </div>
                         </div>
-                        <div>
+
+                        <div className='py-5'>
+                            <Additionalinfo />
+                        </div>
+                    </div>
+                </>
+            )
+        } else if (this.state.selectDiv == 'Description') {
+            return (
+                <>
+                    <div className="container-fluid description">
+                        <div className='d-flex justify-content-around'>
+                            <div>
+                                <button className='border border-primary' onClick={() => this.description()}>Description</button>
+                            </div>
+                            <div>
+                                <button onClick={() => this.additionalInfo()}>Additonal Information</button>
+                            </div>
+                            <div><button onClick={() => this.reviews()}>
+                                Reviews
+                            </button>
+                            </div>
+                        </div>
+                        <div className='py-5'>
                             <Description />
                         </div>
                     </div>
                 </>
             )
-        } else {
+        } else if (this.state.selectDiv == 'Review') {
             return (
-                <> THis is for Reviews
+                <>
+                    <div className="container-fluid description">
+                        <div className='d-flex justify-content-around'>
+                            <div>
+                                <button onClick={() => this.description()}>Description</button>
+                            </div>
+                            <div>
+                                <button onClick={() => this.additionalInfo()}>Additonal Information</button>
+                            </div>
+                            <div><button className='border border-primary' onClick={() => this.reviews()}>
+                                Reviews
+                            </button>
+                            </div>
+                        </div>
+                        <div className='py-5 '>
+                            <Review />
+                        </div>
+                    </div>
                 </>
             )
-
         }
     }
 }

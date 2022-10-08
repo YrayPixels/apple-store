@@ -133,7 +133,20 @@ nav li:hover {
     list-style: none;
 }
 
+.description button {
+    border: none;
+    background: none;
+    font-size: 150%;
 
+}
+
+.description button:hover {
+    border: 1px solid #9ccfb191;
+    background: #9ccfb191;
+    font-size: 150%;
+
+
+}
 
 
 /* rating */
