@@ -32,7 +32,7 @@ const ItemView = () => {
                                     </div>
                                 </div>
                                 <div className="">
-                                    <Ratings />
+                                    <Ratings value='4' name='read-only' />
                                 </div>
                                 <div className="py-3"><p className="fs-4">Select Color</p>
                                     <div className="d-flex">
@@ -45,7 +45,7 @@ const ItemView = () => {
                             <div className="d-flex justify-content-around align-items-center">
                                 <div>
                                     <div>
-                                        <Quantity />
+                                        <Quantity quantity='3' />
                                     </div>
                                     <div></div>
                                 </div>

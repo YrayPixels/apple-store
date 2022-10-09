@@ -1,19 +1,23 @@
-import React from "react";
+import React, { Component } from 'react'
+import Rating from '@mui/material/Rating'
+import Typography from '@mui/material/Typography'
 
-const Ratings = () => {
-    return (
-        <>
-            <div class="rating-stars">
-                <label for="rs0" ></label>
-                <input type="radio" name="rating" id="rs0" checked />
-                <input type="radio" name="rating" id="rs1" /><label for="rs1" ></label>
-                <input type="radio" name="rating" id="rs2" /><label for="rs2"></label>
-                <input type="radio" name="rating" id="rs3" /><label for="rs3"></label>
-                <input type="radio" name="rating" id="rs4" /><label for="rs4"></label>
-                <input type="radio" name="rating" id="rs5" /><label for="rs5"></label>
+
+export class Ratings extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+
+        }
+    }
+
+    render() {
+        return (
+            <div><Typography component="legend"></Typography>
+                <Rating name={this.props.name} value={this.props.value} readOnly />
             </div>
-        </>
-    );
+        )
+    }
 }
-
 export default Ratings;

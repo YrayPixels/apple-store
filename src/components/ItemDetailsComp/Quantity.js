@@ -5,7 +5,7 @@ export class Quantity extends Component {
         super(props)
 
         this.state = {
-            quantity: 0
+            quantity: parseInt(this.props.quantity)
         }
     }
     increment() {

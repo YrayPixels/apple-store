@@ -13,8 +13,7 @@ nav li {
 }
 
 nav li:hover {
-    background-color: #9ccfb191;
-    padding: 10px;
+    border-bottom: 1px solid #ff2720;
 }
 
 .shoe {

@@ -32,7 +32,7 @@ const Cart = () => {
                                 </td>
                                 <td className="text-center">
                                     <div>
-                                        <Quantity />
+                                        <Quantity quantity='5' />
                                     </div>
                                 </td>
                                 <td>
@@ -48,7 +48,7 @@ const Cart = () => {
                                 </td>
                                 <td className="text-center">
                                     <div>
-                                        <Quantity />
+                                        <Quantity quantity='2' />
                                     </div>
                                 </td>
                                 <td>
@@ -65,7 +65,7 @@ const Cart = () => {
                                     $595
                                 </td>
                                 <td className="py-4">
-                                    <a type="button" className="btn btn-primary text-white" href="">Proceed to Checkout</a>
+                                    <a type="button" className="btn btn-primary text-white" href="/checkout">Proceed to Checkout</a>
                                 </td>
                             </tr>
 

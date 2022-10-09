@@ -4,10 +4,12 @@ const Additionalinfo = () => {
     return (
         <>
             {/* Additional Information */}
-            <div>
-                <h5>Aditional Information</h5>
-                <p>Color: Blue, Orange, White</p>
-                <p>Size: 34, 40, 43, 45,</p>
+            <div className='container'>
+                <h5 className='display-6'>Aditional Information</h5>
+                <div>
+                    <p>Color: <span>Blue, Orange, White</span> </p>
+                    <p>Size: <span>34, 40, 43, 45,</span> </p>
+                </div>
             </div>
         </>
     );
