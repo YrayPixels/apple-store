@@ -10,32 +10,91 @@ class ItemView extends Component {
         super(props)
 
         this.state = {
-            message: true
+            addTocart: true,
+            groupPaymentLink: true
         }
 
     }
     addToCart() {
         this.setState({
-            message: true
+            addTocart: true
         })
     };
 
     groupPayment() {
         this.setState({
-            message: false
+            addTocart: false
+        })
+    }
+
+    linkPayment() {
+        this.setState({
+            groupPaymentLink: true
+        })
+    }
+    joinGroup() {
+        this.setState({
+            groupPaymentLink: false
         })
     }
 
     render() {
         // Conditional Statement to Select Payment Method
         let activePaymentMethod
-        if (this.state.message) {
+        if (this.state.addTocart) {
             activePaymentMethod = <div>
                 <a className="btn btn-primary rounded-0 text-white py-2" href="/cart"> Add to Cart</a>
             </div>
         } else {
             activePaymentMethod = <div>
-                <a className="btn btn-newcol3 rounded-0 text-white py-2" href="/cart"> Group Payment</a>
+                <div className="dropdown">
+                    <a className="btn btn-newcol3 rounded-0 text-white py-2  dropdown-toggle" href="#"
+                        role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Pay with Group Payment</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
+                        <li>
+                            <a type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                Generate Your Link
+                            </a>
+                        </li>
+                        <li onClick={this.groupPayment.bind(this)}><a class="dropdown-item" >
+                            Join other waiting buyers
+                        </a></li>
+                    </ul>
+
+                </div>
+                {/* <!-- Modal --> */}
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Generated Link</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <h4><a href="#">https://applestore/male?shoes_63?ref7283gj9</a></h4>
+                                To purchase at this discount kindly Share this link to 10 of your family and friends, through your various social media platforms.
+                                Your purchase at the discounted price will be made possible when you have 10 persons who buys that pair.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-newcol1">View your group</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        };
+        // sTatement to Chose either link or group
+        let groupPaymentType
+        if (this.state.groupPaymentLink == true) {
+            groupPaymentType = <div>
+                Generate Link
+            </div>
+        } else {
+            groupPaymentType = <div>
+                Join a Group
             </div>
         }
         return (
@@ -55,7 +114,7 @@ class ItemView extends Component {
                                     <span className="fs-2"><i className="fa-solid fa-truck-fast"></i></span>
                                 </div>
                                 <div className="my-4">
-                                    {/* Payment Selector */}
+                                    {/* Price  Selector */}
                                     <div>
                                         <div className="text-center">
                                             <p>The Best Price is available for you with direct payment or group payment </p>
@@ -69,22 +128,19 @@ class ItemView extends Component {
                                             <div className='col-6'>
                                                 <input type="radio" className="btn-check" name="price-Option" id="group-outlined" autocomplete="off" />
                                                 <label onClick={this.groupPayment.bind(this)} className="btn btn-outline-success rounded-0 border-0" for="group-outlined">$148.00
-                                                    <span type='btn' className="badge fw-light bg-secondary" >70% 0ff
+                                                    <span type='btn' className="badge mx-1 fw-light bg-secondary" >70% 0ff
                                                     </span></label>
                                             </div>
 
                                         </div>
 
-                                        {/* How it works Modal  */}
-                                        {/* <div class="modal fade" id="#howItWorks" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div id='#howItWorks' className="modal-dialog modal-dialog-centered">
-                    </div>
-                </div> */}
-                                    </div >
 
+                                    </div >
+                                    {/* Ratings Stars */}
                                     <div className="">
                                         <Ratings value='4' name='read-only' />
                                     </div>
+                                    {/* Select COlor */}
                                     <div className="py-3"><p className="fs-4">Select Color</p>
                                         <div className="d-flex">
                                             <span className="text-primary"><i class="fa-solid fa-circle"></i></span>
@@ -113,6 +169,12 @@ class ItemView extends Component {
                         </div>
                     </div>
                 </div>
+                {/* Generated Link */}
+                {/* Groups */}
+                <div className="display-3">
+                    {groupPaymentType}
+                </div>
+
                 {/* Item  Description: Component to description imported here */}
                 <div>
                     <ItemDescription />
