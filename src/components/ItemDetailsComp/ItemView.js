@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import PaymentTypeSelector from "../paymentSelector/PaymentSelector";
 import Favourite from "./Favourite";
 import ItemDescription from "./ItemDescription";
 import Quantity from "./Quantity";
 import Ratings from "./Rating";
+
 const ItemView = () => {
+
     return (
         <>
             <div className="container-fluid my-5">
@@ -21,16 +24,7 @@ const ItemView = () => {
                                 <span className="fs-2"><i className="fa-solid fa-truck-fast"></i></span>
                             </div>
                             <div className="my-4">
-                                <div className="d-flex fs-5 justify-content-evenly">
-                                    <div>
-                                        <p className="text-primary fw-bold">$495.00</p>
-
-                                    </div>
-                                    <div>
-                                        <p className="text-success fw-bold">$148.00</p>
-                                        {/* <span className="fs-6">get 70% off with our new Team Purchase</span> */}
-                                    </div>
-                                </div>
+                                <PaymentTypeSelector />
                                 <div className="">
                                     <Ratings value='4' name='read-only' />
                                 </div>
