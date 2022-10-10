@@ -58,17 +58,17 @@ class ItemView extends Component {
                                     {/* Payment Selector */}
                                     <div>
                                         <div className="text-center">
-                                            <h4>Choose the Best Price </h4>
+                                            <p>The Best Price is available for you with direct payment or group payment </p>
                                             <hr />
                                         </div>
                                         <div className="row fs-4 py-3 justify-content-center align-items-center text-center">
-                                            <div onClick={this.addToCart.bind(this)} className='col-6'>
-                                                <input type="radio" className="btn-check" name="price-Option" id="normal-outlined" autocomplete="off" checked />
+                                            <div className='col-6'>
+                                                <input onClick={this.addToCart.bind(this)} type="radio" className="btn-check" name="price-Option" id="normal-outlined" autocomplete="off" checked />
                                                 <label className="btn btn-outline-success rounded-0 border-0" for="normal-outlined">$495.00</label>
                                             </div>
-                                            <div onClick={this.groupPayment.bind(this)} className='col-6'>
+                                            <div className='col-6'>
                                                 <input type="radio" className="btn-check" name="price-Option" id="group-outlined" autocomplete="off" />
-                                                <label className="btn btn-outline-success rounded-0 border-0" for="group-outlined">$148.00
+                                                <label onClick={this.groupPayment.bind(this)} className="btn btn-outline-success rounded-0 border-0" for="group-outlined">$148.00
                                                     <span type='btn' className="badge fw-light bg-secondary" >70% 0ff
                                                     </span></label>
                                             </div>
