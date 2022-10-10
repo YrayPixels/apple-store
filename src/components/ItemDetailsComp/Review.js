@@ -7,10 +7,11 @@ const Review = () => {
     return (
         <>
             {/* Reviews */}
+
             <div className='container'>
                 <h5 className='display-6'>Reviews</h5>
                 <div className='row justify-content-center'>
-                    <div className='col-4 text-start' >
+                    <div className='col-12 col-lg-4 text-start' >
                         <div className='row align-items-center'>
                             <div className='col-2' >
                                 <Avatar src="images/male.jpg" alt="" />
@@ -51,7 +52,7 @@ const Review = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='col-6'>
+                    <div className='col-12 col-lg-6'>
                         <h5 className='display-6'>Add a Review</h5>
                         <form action="">
                             <div className='mb-3'>

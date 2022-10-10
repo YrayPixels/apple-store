@@ -39,7 +39,7 @@ export default class ItemDescription extends Component {
                                 <button onClick={() => this.description()}>Description</button>
                             </div>
                             <div>
-                                <button className='border-bottom border-4 border-primary' onClick={() => this.additionalInfo()}>Additonal Information</button>
+                                <button className='border-bottom border-4 border-primary' onClick={() => this.additionalInfo()}>Additional Information</button>
                             </div>
                             <div><button onClick={() => this.reviews()}>
                                 Reviews
@@ -62,7 +62,7 @@ export default class ItemDescription extends Component {
                                 <button className='border-bottom border-4 border-primary' onClick={() => this.description()}>Description</button>
                             </div>
                             <div>
-                                <button onClick={() => this.additionalInfo()}>Additonal Information</button>
+                                <button onClick={() => this.additionalInfo()}>Additional Information</button>
                             </div>
                             <div><button onClick={() => this.reviews()}>
                                 Reviews
@@ -84,7 +84,7 @@ export default class ItemDescription extends Component {
                                 <button onClick={() => this.description()}>Description</button>
                             </div>
                             <div>
-                                <button onClick={() => this.additionalInfo()}>Additonal Information</button>
+                                <button onClick={() => this.additionalInfo()}>Additional Information</button>
                             </div>
                             <div><button className='border-bottom border-4 border-primary' onClick={() => this.reviews()}>
                                 Reviews

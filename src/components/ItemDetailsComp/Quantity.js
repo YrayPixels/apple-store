@@ -14,9 +14,16 @@ export class Quantity extends Component {
         })
     }
     decrement() {
-        this.setState({
-            quantity: this.state.quantity - 1
-        })
+        if (this.state.quantity <= 1) {
+            this.setState({
+                quantity: 1
+            })
+        } else {
+            this.setState({
+                quantity: this.state.quantity - 1
+            })
+        }
+
     }
     render() {
         return (
